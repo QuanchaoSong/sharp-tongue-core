@@ -10,7 +10,7 @@ from tenacity import (
 import backoff
 
 
-OPENAI_API_KEY = "your OpenAI API key"
+OPENAI_API_KEY = "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"
 
 class Sacarstic_Comments_Gerneration:
     def __init__(self) -> None:

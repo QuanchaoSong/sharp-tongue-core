@@ -100,7 +100,7 @@ def generate_sacarstic_seed_by_attractiveness(attractiveness_index, attractivene
     return sacarstic_seed
         
 def get_adjective_words(seed_sentense):
-    prompt = f"What non-negative adjective words can be used to describe \"{seed_sentense}\"? List 5 of them and their antonym word in 2-d python array."
+    prompt = f"What non-negative adjective words can be used to describe \"{seed_sentense}\"? List 5 of them and their antonym word in pure 2-d python array."
     response = openai.Completion.create(
         model="text-davinci-003",
         prompt=prompt,
