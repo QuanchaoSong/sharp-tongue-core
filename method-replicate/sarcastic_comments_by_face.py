@@ -31,7 +31,14 @@ class Sacarstic_Comments_By_Face:
 
     def analyse_image_url(self, image_url):
         the_image = Image.open(requests.get(image_url, stream=True).raw).convert("RGB")
-        (self.face_exist, self.cropped_face_image) = self.__check_face(the_image)
+        return self.__analyze_PIL_image(the_image)
+
+    def analyse_image_data(self, image_data):
+        the_image = Image.open(image_data).convert("RGB")
+        return self.__analyze_PIL_image(the_image)
+
+    def __analyze_PIL_image(self, PIL_image):
+        (self.face_exist, self.cropped_face_image) = self.__check_face(PIL_image)
         if (self.face_exist == False):
             return (False, None, None)
         
@@ -48,11 +55,9 @@ class Sacarstic_Comments_By_Face:
         self.seed_sentence_list = self.__build_association_list()
         print("seed_sentence_list:", self.seed_sentence_list)
         self.paraphrased_sentence_list = self.__paraphrase_sentences()
+        print("paraphrased_sentence_list:", self.paraphrased_sentence_list)
 
         return (self.face_exist, self.basic_scene, self.paraphrased_sentence_list)
-
-    def analyse_image_data(self, image_data):
-        pass
 
     def __insert_str(self, original_str, pos, adding_str):
         str_list = list(original_str)

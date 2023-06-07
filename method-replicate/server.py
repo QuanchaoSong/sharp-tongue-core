@@ -57,8 +57,9 @@ def analyze_image_url():
 def analyze_image_data():
     img_data = request.files['img']
     img_data.name = img_data.filename
-    img_data = BufferedReader(img_data)
+    img_data = BufferedReader(img_data)    
     (elements, comments_by_elements, comments_by_context) = tool_for_comments.analyse_image_data(img_data)
+    (face_exist, face_desc, comments_for_face) = tool_for_face.analyse_image_data(img_data)
 
     res_dict = {"code": 1}
     data_dict = {}
@@ -66,6 +67,14 @@ def analyze_image_data():
     data_dict["comments_by_elements"] = comments_by_elements
 
     data_dict["comments_by_context"] = comments_by_context
+    face_dict = {}
+    if (face_exist):
+        face_dict["face_exist"] = 1
+        face_dict["face_desc"] = face_desc
+        face_dict["comments_for_face"] = comments_for_face
+    else:
+        face_dict["face_exist"] = 0
+    data_dict["face"] = face_dict
     res_dict["data"] = data_dict
     return json.dumps(res_dict)
 
