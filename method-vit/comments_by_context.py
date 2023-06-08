@@ -4,6 +4,9 @@ from transformers import Blip2Processor, Blip2ForConditionalGeneration
 import torch
 import openai
 
+
+OPENAI_API_KEY = "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"
+
 class Comments_By_Context:
     def __init__(self) -> None:
         self.device = "cuda" if torch.cuda.is_available() else "cpu"
@@ -12,8 +15,7 @@ class Comments_By_Context:
             "Salesforce/blip2-opt-2.7b", torch_dtype=torch.float32
         )
         self.model.to(self.device)
-
-        OPENAI_API_KEY = "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"
+        
         openai.api_key = OPENAI_API_KEY
 
     def analyse_image_url(self, image_url):
@@ -27,7 +29,7 @@ class Comments_By_Context:
     def __analyse_image(self, image):
         context_sentence = self.__get_context_of_image(image)
         sacarstic_comment = self.__generate_sacarstic_comment_to_sentence(context_sentence)
-        return sacarstic_comment
+        return [sacarstic_comment]
 
     def __get_context_of_image(self, image):
         inputs = self.processor(images=image, return_tensors="pt").to(self.device, torch.float32)

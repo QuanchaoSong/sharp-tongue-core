@@ -15,7 +15,7 @@ from tenacity import (
 
 OPENAI_API_KEY = "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"
 
-class Sacarstic_Comments_By_Face:
+class Comments_For_Face:
     def __init__(self) -> None:
         super().__init__()
 
@@ -259,6 +259,6 @@ class Sacarstic_Comments_By_Face:
 
 
 if __name__ == '__main__':
-    tool_for_face = Sacarstic_Comments_By_Face()
+    tool_for_face = Comments_For_Face()
     res = tool_for_face.analyse_image_url("https://th.bing.com/th/id/OIP.yDPUz4c9NYXJrmv8FKaASwHaEK?pid=ImgDet&rs=1")
     print("res:", res)

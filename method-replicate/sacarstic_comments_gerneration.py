@@ -36,6 +36,8 @@ class Sacarstic_Comments_Gerneration:
         sacarstic_comment_list = self.__generate_sacarstic_comment_to_sentence(self.context_sentence)
         return (self.element_list, the_paraphrased_sentences, sacarstic_comment_list)
     
+
+    @retry(wait=wait_random_exponential(min=3, max=60), stop=stop_after_attempt(6))
     def __generate_sacarstic_comment_to_sentence(self, sentence):
         prompt = f"From different perspectives, generate 3 sarcastic comments towards the content of a picture: \"{sentence}\". It's better to give them a sarcastic tone. Give result in pure Python list like [\"comment1\", \"comment2\", \"comment3\"], adding escape mark if necessary."
         response = openai.Completion.create(
