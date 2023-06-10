@@ -2,7 +2,7 @@ import replicate
 from nltk.stem import WordNetLemmatizer
 
 
-REPLICATE_API_TOKEN = "r8_9mZJqiO9125Ua8ReXM77oBMakdBjbAp02zczA"
+REPLICATE_API_TOKEN = "Your Replicate API token"
 
 class Material_By_Blip:
     def __init__(self, k) -> None:

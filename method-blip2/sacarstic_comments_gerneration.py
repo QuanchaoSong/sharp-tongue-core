@@ -4,13 +4,15 @@ import openai
 from nltk.corpus import wordnet
 from material_by_blip import *
 
+
+OPENAI_API_KEY = "Your OpenAI API Key"
+
 class Sacarstic_Comments_Gerneration:
     def __init__(self) -> None:
         super().__init__()
 
         self.blip_tool = Material_By_Blip()
-
-        OPENAI_API_KEY = "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"
+        
         openai.api_key = OPENAI_API_KEY
 
     def analyse_image_url(self, image_url):

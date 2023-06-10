@@ -2,7 +2,7 @@ import replicate
 import torch
 
 
-REPLICATE_API_TOKEN = "r8_9mZJqiO9125Ua8ReXM77oBMakdBjbAp02zczA"
+REPLICATE_API_TOKEN = "Your Replicate API token"
 MINI_GPT_MODEL = "joehoover/instructblip-vicuna13b:c4c54e3c8c97cd50c2d2fec9be3b6065563ccf7d43787fb99f84151b867178fe"
 
 replicate_client = replicate.Client(api_token=REPLICATE_API_TOKEN)

@@ -9,7 +9,7 @@ import torch
 import openai
 
 
-OPENAI_API_KEY = "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"
+OPENAI_API_KEY = "Your OpenAI API Key"
 openai.api_key = OPENAI_API_KEY
 
 

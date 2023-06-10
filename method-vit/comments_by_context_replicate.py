@@ -9,9 +9,9 @@ from tenacity import (
 )
 
 
-OPENAI_API_KEY = "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"
+OPENAI_API_KEY = "Your OpenAI API Key"
 
-REPLICATE_API_TOKEN = "r8_9mZJqiO9125Ua8ReXM77oBMakdBjbAp02zczA"
+REPLICATE_API_TOKEN = "Your Replicate API token"
 
 class Comments_By_Context_Replicate:
     def __init__(self) -> None:

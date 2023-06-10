@@ -5,7 +5,7 @@ import torch
 import openai
 
 
-OPENAI_API_KEY = "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"
+OPENAI_API_KEY = "Your OpenAI API Key"
 
 class Comments_By_Context:
     def __init__(self) -> None:
