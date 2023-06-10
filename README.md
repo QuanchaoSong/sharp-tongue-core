@@ -63,18 +63,18 @@ For the backend server programs, there are actually 3 methods:
 
 <img width="433" alt="Screen Shot 2023-06-06 at 6 14 50 PM" src="https://github.com/QuanchaoSong/sharp-tongue-core/assets/47345588/e024dd75-4ee8-4d00-9e80-2de98b12060e">
 
-The fastest method to get the result is `method-replicate`, because the anlysis for the image is moved to the *Replicate* cloud computers which is super fast. To test on this method, simply run:
-
-```bash
-python method-replicate/server.py
-```
-
-For the other 2 methods, it is the same to run them:
+The fastest methods to get the result is `method-replicate` and `method-vit`, because the anlysis for the image context is moved to the *Replicate* cloud computers which is super fast. To test on these two methods, simply run:
 
 ```bash
 python method-vit/server.py
 # or
+python method-replicate/server.py
+```
+
+For the last methods, it is the same to run it:
+
+```bash
 python method-blip2/server.py
 ```
 
-*It's recommended to use the `method-replicate` because it saves time.*
+*It's recommended to use the `method-replicate` or `method-vit` because it saves time.*
